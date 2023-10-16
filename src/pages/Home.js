@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import React from 'react';
 import '../App.css';
 import LastUsersTable from '../components/tables/LastUsersTable.js';
 import LastPostsTable from '../components/tables/LastPostsTable.js';

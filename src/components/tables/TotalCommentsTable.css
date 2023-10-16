@@ -1,0 +1,49 @@
+/* TotalCommentsTable.css */
+
+.total-comments-table {
+    background-color: #f2f2f2; /* Cor de fundo igual à da navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px; /* Cantos arredondados */
+    padding: 31px 20px;
+    margin: -217px 0 0 1445px; /* Centralize horizontalmente */
+    max-width: 600px; /* Defina um valor máximo de largura */
+}
+
+.total-comments-table h2 {
+    color: #333; /* Cor do texto igual à da navbar */
+    text-align: center; /* Centralize o texto horizontalmente */
+    max-width: 100%; /* Remova a limitação de largura */
+}
+
+.total-comments-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto; /* Centralize horizontalmente */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-family: Arial, sans-serif;
+    font-size: 56px;
+}
+
+.total-comments-table th, .total-comments-table td {
+    padding: 10px; /* Ajuste o preenchimento conforme necessário */
+    text-align: center;
+}
+
+.total-comments-table th {
+    background-color: #1a73e8; /* Cor de fundo das células do cabeçalho */
+    color: #fff; /* Cor do texto no cabeçalho */
+}
+
+.total-comments-table th:first-child, .total-comments-table td:first-child {
+    border-top-left-radius: 10px; /* Cantos arredondados no canto superior esquerdo */
+    border-bottom-left-radius: 10px;
+}
+
+.total-comments-table th:last-child, .total-comments-table td:last-child {
+    border-top-right-radius: 10px; /* Cantos arredondados no canto superior direito */
+    border-bottom-right-radius: 10px;
+}
+
+.total-comments-table tr:nth-child(even) {
+    background-color: #fff; /* Cor de fundo das linhas pares */
+}

@@ -1,0 +1,30 @@
+/* TotalUsersTable.css */
+
+.total-users-table {
+    background-color: #f2f2f2; /* Cor de fundo igual à da navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px; /* Cantos arredondados */
+    padding: 30px 20px;
+    margin: 50px 50px; /* Centralize horizontalmente e ajuste a margem conforme necessário */
+    max-width: 600px; /* Defina um valor máximo de largura */
+}
+
+.total-users-table h2 {
+    color: #333; /* Cor do texto igual à da navbar */
+    text-align: center; /* Centralize o texto horizontalmente */
+    max-width: 100%; /* Remova a limitação de largura */
+}
+
+.total-users-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto; /* Centralize horizontalmente */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-family: Arial, sans-serif;
+    font-size: 56px;
+}
+
+.total-users-table td {
+    padding: 10px; /* Ajuste o preenchimento conforme necessário */
+    text-align: center;
+}

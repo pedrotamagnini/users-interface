@@ -1,0 +1,43 @@
+.last-users-table {
+    background-color: #f2f2f2; /* Cor de fundo igual à da navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px; /* Cantos arredondados */
+    padding: 20px;
+    margin: 50px auto 0 50px; /* Margens superior, direita, inferior e esquerda */
+    max-width: 600px; /* Defina um valor máximo de largura */
+}
+
+.last-users-table h2 {
+    color: #333; /* Cor do texto igual à da navbar */
+    text-align: center; /* Centralize o texto horizontalmente */
+    max-width: 100%; /* Remova a limitação de largura */
+}
+
+.last-users-table table {
+    width: 100%;
+    margin: 0 auto; /* Centralizar horizontalmente */
+    border-collapse: collapse;
+}
+
+.last-users-table th, .last-users-table td {
+    margin: 50px 50px 50px 50px; /* Margens superior, direita, inferior e esquerda */
+    text-align: center;
+}
+
+.last-users-table th {
+    background-color: #1a73e8; /* Cor de fundo das células do cabeçalho */
+}
+
+.last-users-table th:first-child, .last-users-table td:first-child {
+    border-top-left-radius: 10px; /* Cantos arredondados no canto superior esquerdo */
+    border-bottom-left-radius: 10px;
+}
+
+.last-users-table th:last-child, .last-users-table td:last-child {
+    border-top-right-radius: 10px; /* Cantos arredondados no canto superior direito */
+    border-bottom-right-radius: 10px;
+}
+
+.last-users-table tr:nth-child(even) {
+    background-color: #fff; /* Cor de fundo das linhas pares */
+}

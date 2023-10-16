@@ -3,7 +3,7 @@ import "./App.css";
 import Route from "./routes/Route";
 import FooterGlobal from "./components/utils/FooterGlobal";
 import HeaderGlobal from "./components/utils/HeaderGlobal";
-import { AppContextProvider } from './context/AppContext';
+import { AppContextProvider } from './context/AppProvider';
 
 function App() {
 
