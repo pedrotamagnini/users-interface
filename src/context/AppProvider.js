@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import React, { createContext, useReducer } from 'react';
 import PropTypes from 'prop-types';
 
 const menus = [
@@ -7,26 +7,40 @@ const menus = [
     { key: 'about', label: 'About' },
 ];
 
+// Defina a ação para atualizar o estado
+const UPDATE_NAV = 'UPDATE_NAV';
+
 const initialState = {
     nav: { selectedMenu: menus[0], menus: menus },
 };
 
+const reducer = (state, action) => {
+    switch (action.type) {
+        case UPDATE_NAV:
+            return {
+                ...state,
+                nav: action.payload,
+            };
+        default:
+            return state;
+    }
+};
+
 const AppContext = createContext();
 
-export class AppContextProvider extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = initialState;
-    }
+export const AppContextProvider = ({ children }) => {
+    const [state, dispatch] = useReducer(reducer, initialState);
 
-    render() {
-        return (
-            <AppContext.Provider value={this.state}>
-                {this.props.children}
-            </AppContext.Provider>
-        );
-    }
-}
+    const updateNav = (newNav) => {
+        dispatch({ type: UPDATE_NAV, payload: newNav });
+    };
+
+    return (
+        <AppContext.Provider value={{ state, updateNav }}>
+            {children}
+        </AppContext.Provider>
+    );
+};
 
 AppContextProvider.propTypes = {
     children: PropTypes.node,

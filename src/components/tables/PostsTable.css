@@ -1,4 +1,4 @@
-/* Atualize o nome da classe CSS para corresponder ao seu componente */
+/* Atualize o nome da classe CSS para .post-table */
 .post-table {
     background-color: #f2f2f2;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -59,6 +59,22 @@
     outline: none;
 }
 
+/* Estilo para a barra de filtro */
+.post-table select {
+    width: 12%;
+    padding: 10px;
+    margin: 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.post-table select:focus {
+    border-color: #1a73e8; /* Cor do foco */
+    outline: none;
+}
+
 .table-container {
     max-height: 400px; /* Defina a altura máxima desejada */
     overflow-y: auto; /* Adicione rolagem vertical se o conteúdo exceder a altura máxima */
@@ -80,20 +96,4 @@ td.status.completed {
 /* Estilo para status "pending" (laranja) */
 td.status.pending {
     color: orange;
-}
-
-/* Estilo para a barra de filtro */
-.post-table select {
-    width: 12%;
-    padding: 10px;
-    margin: 0 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.post-table select:focus {
-    border-color: #1a73e8; /* Cor do foco */
-    outline: none;
 }

@@ -20,12 +20,14 @@
     border-collapse: collapse;
 }
 
-.last-posts-table th, .last-posts-table td {
+.last-posts-table td {
     margin: 50px 50px 50px 50px; /* Margens superior, direita, inferior e esquerda */
-    text-align: center;
+    text-align: left;
 }
 
 .last-posts-table th {
+    margin: 50px 50px 50px 50px; /* Margens superior, direita, inferior e esquerda */
+    text-align: center;
     background-color: #1a73e8; /* Cor de fundo das células do cabeçalho */
 }
 

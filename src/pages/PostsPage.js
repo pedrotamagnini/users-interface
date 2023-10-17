@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css';
 import PostsTable from '../components/tables/PostsTable';
 import Nav from '../components/utils/Nav';
+import FormUser from "../components/users/FormUsers";
 
 function PostsPage() {
     return (

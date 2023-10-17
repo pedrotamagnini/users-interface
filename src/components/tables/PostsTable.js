@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import './UsersTable.css';
+import './PostsTable.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 function PostsTable() {
-    const postsData = [
+    const [postsData, setPostsData] = useState([
         {
             "id": 75716,
             "user_id": 5354499,
@@ -62,40 +64,36 @@ function PostsTable() {
             "user_id": 5354485,
             "title": "Dolorum vae eum reprehenderit carpo ustilo volva.",
             "post": "Attero vero cubitum. Fugiat ara claro. Cinis arma est. Tamisium accedo aiunt. Nisi qui cum. Alo vito arbustum. Video nam similique. Itaque tantillus placeat. Tenetur capitulus quia. Despecto civis solvo. Clam vulariter patior."
-        }
-    ];
+        },
+    ]);
 
     const [searchTerm, setSearchTerm] = useState('');
-    const [selectedStatus, setSelectedStatus] = useState('all');
+    const [selectedPost, setSelectedPost] = useState(null);
 
     const handleSearch = (event) => {
         setSearchTerm(event.target.value);
     };
 
-    const handleStatusFilter = (event) => {
-        setSelectedStatus(event.target.value);
+    const handleDeletePost = (post) => {
+        const updatedPosts = postsData.filter((p) => p !== post);
+        setPostsData(updatedPosts);
+        setSelectedPost(null);
     };
 
     const filteredPosts = postsData.filter((post) => {
-        // Filtrar com base no termo de pesquisa
-        const matchesSearchTerm = post.id.toString().includes(searchTerm);
-
-        // Filtrar com base no status selecionado
-        if (selectedStatus === 'all') {
-            return matchesSearchTerm;
-        } else {
-            return matchesSearchTerm && post.status === selectedStatus;
-        }
+        const matchesSearchTerm = post.user_id.toString().includes(searchTerm);
+        return matchesSearchTerm;
     });
 
     return (
         <div className='post-table'>
             <input
                 type='text'
-                placeholder='Search post by ID'
+                placeholder='Search post by USER ID'
                 value={searchTerm}
                 onChange={handleSearch}
             />
+
             <div className='table-container'>
                 <table>
                     <thead>
@@ -104,15 +102,21 @@ function PostsTable() {
                         <th>USER ID</th>
                         <th>TITLE</th>
                         <th>POST</th>
+                        <th>ACTIONS</th>
                     </tr>
                     </thead>
                     <tbody>
                     {filteredPosts.map((post, index) => (
-                        <tr key={index}>
+                        <tr key={index} onClick={() => setSelectedPost(post)}>
                             <td>{post.id}</td>
                             <td>{post.user_id}</td>
                             <td>{post.title}</td>
                             <td>{post.post}</td>
+                            <td>
+                                {selectedPost === post && (
+                                    <FontAwesomeIcon icon={faTrash} onClick={() => handleDeletePost(post)} />
+                                )}
+                            </td>
                         </tr>
                     ))}
                     </tbody>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCog, FaBell, FaUser } from 'react-icons/fa'; // Importe os ícones desejados da biblioteca react-icons
+import { FaCog, FaBell, FaUser } from 'react-icons/fa';
 
 function HeaderGlobal() {
     return (

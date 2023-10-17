@@ -10,7 +10,7 @@ function TotalPostsTable({ totalPosts }) {
                 </thead>
                 <tbody>
                 <tr>
-                    <td>225</td>
+                    <td>10</td>
                 </tr>
                 </tbody>
             </table>

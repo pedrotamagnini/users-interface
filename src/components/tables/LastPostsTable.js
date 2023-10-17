@@ -1,33 +1,39 @@
+import React, { useState } from 'react';
 import './LastPostsTable.css'; // Importe o arquivo CSS
 
 function LastPostsTable() {
-    // Suponha que você tenha uma lista de últimos posts
     const lastPosts = [
-        { title: 'Post 1', author: 'Author 1', date: '2023-10-01' },
-        { title: 'Post 2', author: 'Author 2', date: '2023-10-02' },
-        { title: 'Post 3', author: 'Author 3', date: '2023-10-03' },
-        // Adicione mais posts, se necessário
+        {
+            "user_id": 5354499,
+            "title": "Et comminor cupressus earum cometes.",
+        },
+        {
+            "user_id": 5354496,
+            "title": "Degero acidus validus ambulo amor correptius autem adinventitias delego.",
+        },
+        {
+            "user_id": 5354496,
+            "title": "Thorax quisquam summisse condico tersus triumphus civis viduata utpote.",
+        },
     ];
 
     return (
-        <div className='last-posts-table'> {/* Reutilize a classe .last-users-table */}
-            <h2>📄 Last Posts Added</h2> {/* Atualize o título */}
+        <div className='last-posts-table'>
+            <h2>📄 Last Posts Added</h2>
             <table>
                 <thead>
                 <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Date</th>
-                    {/* Outras colunas, se necessário */}
+                    <th>USER ID</th>
+                    <th>TITLE</th>
                 </tr>
                 </thead>
                 <tbody>
                 {lastPosts.map((post, index) => (
                     <tr key={index}>
-                        <td>{post.title}</td>
-                        <td>{post.author}</td>
-                        <td>{post.date}</td>
-                        {/* Outras colunas, se necessário */}
+                        <td>{post.user_id}</td>
+                        <td className="post-title">
+                            {post.title.length > 30 ? `${post.title.substring(0, 60)}...` : post.title}
+                        </td>
                     </tr>
                 ))}
                 </tbody>

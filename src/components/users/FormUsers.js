@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useAppContext } from "../../context/AppContext";
+import { useAppContext } from "../../context/AppProvider";
 import { showAlertModal } from "../utils/Alert";
 import './FormUsers.css';
 
@@ -19,16 +19,29 @@ const getFormattedCurrentDateTime = () => {
 };
 
 function FormUser() {
-    const { dispatch } = useAppContext(); // Use o gancho personalizado para acessar o contexto
+    const { dispatch } = useAppContext();
     const [newUser, setNewUser] = useState({
         id: "",
         userId: "",
         title: "",
-        due_on: getFormattedCurrentDateTime(), // Preencha automaticamente com a data e hora atuais
+        due_on: getFormattedCurrentDateTime(),
         status: "pending",
     });
     const [showPopup, setShowPopup] = useState(false);
+    const [showForm, setShowForm] = useState(false);
     const [showConfirmationModal, setShowConfirmationModal] = useState(false);
+
+    const sendUserData = (userData) => {
+        return new Promise((resolve, reject) => {
+            // Simulação de envio de dados para a API
+            setTimeout(() => {
+                // Simulando uma resposta bem-sucedida
+                resolve({ status: 'success', data: userData });
+                // Ou simular um erro
+                // reject(new Error('Erro na chamada à API'));
+            }, 1000); // Simulação de uma chamada assíncrona
+        });
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -36,24 +49,13 @@ function FormUser() {
     };
 
     const handleConfirm = () => {
-        // Enviar os dados do novo usuário para a API ou outra lógica de armazenamento
-        // Substitua este comentário pela lógica apropriada
+        // Here, you need to call `dispatch` with an action to update your state.
+        // Assuming you have an action like 'addUser', you would do something like this:
+        dispatch({ type: 'addUser', payload: newUser });
 
-        // Adicione o novo usuário à lista de usuários
-        dispatch({ type: 'ADD_USER', payload: newUser });
-
-        setShowPopup(false); // Feche o popup do formulário
+        setShowForm(false); // Close the form
         setShowConfirmationModal(false);
-        showAlertModal("Sucesso!", "Formulário enviado com sucesso!");
-
-        // Limpe os campos do formulário
-        setNewUser({
-            id: "",
-            userId: "",
-            title: "",
-            due_on: getFormattedCurrentDateTime(), // Atualize a data e hora quando um novo usuário é adicionado
-            status: "",
-        });
+        showAlertModal("Success!", "Form submitted successfully!");
     };
 
     const handleCancel = () => {
@@ -147,16 +149,6 @@ function FormUser() {
                                         <input
                                             type="radio"
                                             name="status"
-                                            value="completed"
-                                            checked={newUser.status === "completed"}
-                                            onChange={handleChangeInput}
-                                        />
-                                        Completed
-                                    </label>
-                                    <label>
-                                        <input
-                                            type="radio"
-                                            name="status"
                                             value="pending"
                                             checked={newUser.status === "pending"}
                                             onChange={handleChangeInput}
@@ -174,11 +166,15 @@ function FormUser() {
             )}
             {showConfirmationModal && (
                 <div className="modal">
-                    <div onClick={toggleModal} className=" overlay"></div>
+                    <div onClick={toggleModal} className="overlay"></div>
                     <div className="modal-content">
                         <p className="confirmMessage">Are you sure you want to submit this form?</p>
                         <div className="form-data">
-                            {/* Exiba os dados do novo usuário aqui */}
+                            <p>ID: {newUser.id}</p>
+                            <p>USER ID: {newUser.userId}</p>
+                            <p>TITLE: {newUser.title}</p>
+                            <p>DUE_ON: {newUser.due_on}</p>
+                            <p>STATUS: {newUser.status}</p>
                         </div>
                         <p></p>
                         <div className="modal-buttons-container">

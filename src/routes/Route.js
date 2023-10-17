@@ -12,7 +12,7 @@ const Route = () => {
             <ReactRoute path={"/"} element={<Welcome/>}/>
             <ReactRoute path={"/home"} element={<Home/>}/>
             <ReactRoute path={"/users"} element={<Users/>}/>
-            <ReactRoute path={"/posts-page"} element={<PostsPage/>}/>
+            <ReactRoute path={"/posts"} element={<PostsPage/>}/>
             <ReactRoute path={"/comments"} element={<Comments/>}/>
             <ReactRoute path={"/about"} element={<About/>}/>
         </Routes>

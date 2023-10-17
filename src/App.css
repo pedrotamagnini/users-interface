@@ -261,17 +261,6 @@ html, body {
   margin-top: 10px;
 }
 
-
-/*.home-Container {
-    width: 100vw;
-    height: 100vh;
-    text-align: left;
-    background-image: url('./assets/images/Home_Video.mp4');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}*/
-
 .header-global {
   display: flex;
   align-items: center;
