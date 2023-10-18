@@ -1,8 +1,7 @@
 /* Estilos gerais do formulário */
-.form {
+.form-users {
     background-color: #f2f2f2;
     padding: 20px;
-    margin: 0 50px 150px 50px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 10px;
@@ -146,11 +145,10 @@ h1 {
 }
 
 .popup-content button,
-.confirm-modal,
-.cancel-modal {
+.cancel-modal-users {
     background-color: #ff6b6b;
     color: white;
-    margin: 70px 950px 0 0;
+    margin: 100px 950px 0 0;
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 16px;
@@ -182,17 +180,6 @@ form-data-table {
     border-radius: 10px;
     padding: 5px 5px;
     margin: 5px;
-    cursor: pointer;
-}
-
-.cancel-modal {
-    background: #ff6b6b;
-    font-size: 18px;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 5px 5px;
-    margin: 1px;
     cursor: pointer;
 }
 

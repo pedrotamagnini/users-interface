@@ -55,7 +55,7 @@ function FormUser() {
                         <button className="close-button" onClick={() => setShowPopup(false)}>
                             X
                         </button>
-                        <form className="form" onSubmit={handleSubmit}>
+                        <form className="form-users" onSubmit={handleSubmit}>
                             <h1>Add User</h1>
                             <p>
                                 <label className="boxTitle">

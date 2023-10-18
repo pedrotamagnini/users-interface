@@ -12,6 +12,8 @@ function Comments() {
                 <Nav />
             </div>
             <div className="tables-container">
+                <CommentsTable />
+                <FormComments />
             </div>
         </div>
     );

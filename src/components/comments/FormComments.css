@@ -1,0 +1,133 @@
+/* Estilos gerais do formulário */
+.form-comments {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: start;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0 20px;
+}
+
+/* Botão "Adicionar Comment" */
+.button-Add-Comment {
+    background-color: #1a73e8;
+    max-width: 200px;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20px 20px 20px 50px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+/* Botão "Enviar" no modal de confirmação */
+.button-Submit {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20px;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.button-Submit:hover {
+    background-color: #3E5794;
+}
+
+.boxTitle {
+    display: block;
+    width: 260px;
+    font-weight: bold;
+    margin: 20px;
+    margin-bottom: 20px;
+}
+
+/* Caixa de Número */
+.inputnumberBox,
+.inputBox {
+    width: 260px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+/* Estilos específicos para a tabela de dados */
+.form-data {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-data h2 {
+    color: #333;
+    text-align: center;
+    max-width: 100%;
+}
+
+.form-data table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.form-data th,
+.form-data td {
+    margin: 50px 50px 50px 50px;
+    text-align: center;
+}
+
+.form-data th {
+    background-color: #1a73e8;
+}
+
+.form-data th:first-child,
+.form-data td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.form-data th:last-child,
+.form-data td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.form-data tr:nth-child(even) {
+    background-color: #fff;
+}
+
+.inputBox-textarea {
+    width: 260px;
+    height: 100px;
+    margin-top: 10px;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.close-button {
+    background-color: #ff6b6b; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    width: 30px; /* Largura do botão */
+    height: 30px; /* Altura do botão */
+    border: none; /* Remover a borda do botão */
+    border-radius: 50%; /* Tornar o botão circular (pode ajustar o valor para a forma desejada) */
+    cursor: pointer;
+    font-size: 18px; /* Tamanho da fonte */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-button:hover {
+    background-color: #ff4d4d; /* Cor de fundo quando o botão é hover */
+}

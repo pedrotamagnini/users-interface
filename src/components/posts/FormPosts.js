@@ -54,68 +54,68 @@ function FormPosts() {
                         <button className="close-button" onClick={() => setShowPopup(false)}>
                             X
                         </button>
-                        <form className="form" onSubmit={handleSubmit}>
-                        <h1>Add Post</h1>
-                        <p>
-                            <label className="boxTitle">
-                                ID
-                                <input
-                                    className="inputBox"
-                                    placeholder="Enter ID"
-                                    type="text"
-                                    name="id"
-                                    required
-                                    value={newPost.id}
-                                    onChange={handleChangeInput}
-                                />
-                            </label>
-                        </p>
-                        <p>
-                            <label className="boxTitle">
-                                User ID
-                                <input
-                                    className="inputBox"
-                                    placeholder="Enter User ID"
-                                    type="text"
-                                    name="user_id"
-                                    required
-                                    value={newPost.user_id}
-                                    onChange={handleChangeInput}
-                                />
-                            </label>
-                        </p>
-                        <p>
-                            <label className="boxTitle">
-                                Title
-                                <input
-                                    className="inputBox"
-                                    placeholder="Enter Title"
-                                    type="text"
-                                    name="title"
-                                    required
-                                    value={newPost.title}
-                                    onChange={handleChangeInput}
-                                />
-                            </label>
-                        </p>
-                        <p>
-                            <label className="boxTitle">
-                                Post
-                                <textarea
-                                    className="inputBox-textarea"
-                                    placeholder="Enter Post"
-                                    name="post"
-                                    required
-                                    value={newPost.post}
-                                    onChange={handleChangeInput}
-                                />
-                            </label>
-                        </p>
-                        <p>
-                            <input className="button-Submit" type="submit" value="Submit" />
-                        </p>
-                    </form>
-                </div>
+                        <form className="form-posts" onSubmit={handleSubmit}>
+                            <h1>Add Post</h1>
+                            <p>
+                                <label className="boxTitle">
+                                    ID
+                                    <input
+                                        className="inputBox"
+                                        placeholder="Enter ID"
+                                        type="text"
+                                        name="id"
+                                        required
+                                        value={newPost.id}
+                                        onChange={handleChangeInput}
+                                    />
+                                </label>
+                            </p>
+                            <p>
+                                <label className="boxTitle">
+                                    User ID
+                                    <input
+                                        className="inputBox"
+                                        placeholder="Enter User ID"
+                                        type="text"
+                                        name="user_id"
+                                        required
+                                        value={newPost.user_id}
+                                        onChange={handleChangeInput}
+                                    />
+                                </label>
+                            </p>
+                            <p>
+                                <label className="boxTitle">
+                                    Title
+                                    <input
+                                        className="inputBox"
+                                        placeholder="Enter Title"
+                                        type="text"
+                                        name="title"
+                                        required
+                                        value={newPost.title}
+                                        onChange={handleChangeInput}
+                                    />
+                                </label>
+                            </p>
+                            <p>
+                                <label className="boxTitle">
+                                    Post
+                                    <textarea
+                                        className="inputBox-textarea"
+                                        placeholder="Enter Post"
+                                        name="post"
+                                        required
+                                        value={newPost.post}
+                                        onChange={handleChangeInput}
+                                    />
+                                </label>
+                            </p>
+                            <p>
+                                <input className="button-Submit" type="submit" value="Submit" />
+                            </p>
+                        </form>
+                    </div>
                 </div>
             )}
             {showConfirmationModal && (

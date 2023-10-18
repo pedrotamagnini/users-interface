@@ -1,8 +1,7 @@
 /* Estilos gerais do formulário */
-.form {
+.form-posts {
     background-color: #f2f2f2;
     padding: 20px;
-    margin: 0 50px 150px 50px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 10px;

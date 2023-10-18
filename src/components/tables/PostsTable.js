@@ -99,7 +99,7 @@ function PostsTable() {
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>USER ID</th>
+                        <th>USER_ID</th>
                         <th>TITLE</th>
                         <th>POST</th>
                         <th>ACTIONS</th>
