@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 const menus = [
     { key: 'home', label: 'Home' },
-    { key: 'projects', label: 'Projects' },
+    { key: 'users', label: 'Users' },
+    { key: 'posts', label: 'Posts' },
+    { key: 'comments', label: 'Comments' },
     { key: 'about', label: 'About' },
 ];
 

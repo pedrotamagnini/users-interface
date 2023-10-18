@@ -1,4 +1,4 @@
-import { createUsers, fetchUsersSer, createPosts, fetchPostsSer } from "../../src/Services/UserService";
+import { createUsers, fetchUsersSer, createPosts, fetchPostsSer, createComments, fetchCommentsSer } from "../../src/Services/UserService";
 import {showAlertModal} from "../../src/components/utils/Alert";
 
 export const SELECT_MENU = "SELECT_MENU";
@@ -132,7 +132,74 @@ export const createPostAction = (dispatch, newPostData) => {
       },
       (error) => {
         dispatch(createPostError(error));
-        showAlertModal("Error!", "Failed to create user. Please try again.");
+        showAlertModal("Error!", "Failed to create comment. Please try again.");
       }
   );
+};
+
+  //Comments
+//GET COMMENTS
+  export const FETCH_COMMENTS_STARTED = "FETCH_COMMENTS_STARTED";
+  export const FETCH_COMMENTS_SUCCESS = "FETCH_COMMENTS_SUCCESS";
+  export const FETCH_COMMENTS_FAILURE = "FETCH_COMMENTS_FAILURE";
+
+  export function fetchCommentsAction(dispatch) {
+    const action = {
+      type: FETCH_COMMENTS_STARTED,
+    };
+    dispatch(action);
+    fetchCommentsSer(
+        (res) => dispatch(fetchCommentsSuccess(res)),
+        (err) => dispatch(fetchCommentsFailure(err.message))
+    );
+  }
+
+  export function fetchCommentsSuccess(comments) {
+    return {
+      type: FETCH_COMMENTS_SUCCESS,
+      payload: {
+        data: [...comments],
+      },
+    };
+  }
+
+  export function fetchCommentsFailure(message) {
+    return {
+      type: FETCH_COMMENTS_FAILURE,
+      payload: {
+        error: message,
+      },
+    };
+  };
+
+//CREATE POSTS
+  export const CREATE_COMMENTS_SUCCESS = "CREATE_COMMENTS_SUCCESS";
+  export const CREATE_COMMENTS_FAILURE = "CREATE_COMMENTS_FAILURE";
+
+  export const createCommentsSuccess = (comments) => {
+    return {
+      type: CREATE_COMMENTS_SUCCESS,
+      payload: comments,
+    };
+  };
+
+  export const createCommentError = (error) => {
+    return {
+      type: CREATE_COMMENTS_FAILURE,
+      payload: error,
+    };
+  };
+  export const createCommentAction = (dispatch, newCommentData) => {
+    createComments(
+        newCommentData,
+        (data) => {
+          console.log("action 2");
+          dispatch(createCommentsSuccess(data));
+          showAlertModal("Success!", "Form submitted successfully!");
+        },
+        (error) => {
+          dispatch(createCommentError(error));
+          showAlertModal("Error!", "Failed to create comment. Please try again.");
+        }
+    );
 };

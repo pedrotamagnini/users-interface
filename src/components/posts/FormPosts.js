@@ -5,7 +5,6 @@ import './FormPosts.css'
 import ConfirmationModal from '../../ConfirmationModal/ConfirmationModal'
 import {createPostAction} from '../../context/Actions'
 
-
 function FormPosts() {
     const { dispatch } = useAppContext();
     const [newPost, setNewPost] = useState({

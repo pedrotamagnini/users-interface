@@ -9,6 +9,11 @@ import {
   FETCH_POSTS_FAILURE,
   FETCH_POSTS_STARTED,
   FETCH_POSTS_SUCCESS,
+  CREATE_COMMENT_FAILURE,
+  CREATE_COMMENT_SUCCESS,
+  FETCH_COMMENTS_FAILURE,
+  FETCH_COMMENTS_STARTED,
+  FETCH_COMMENTS_SUCCESS,
   SELECT_MENU,
 } from "../context/Actions";
 
@@ -113,6 +118,51 @@ const reducer = (state, action) => {
       return {
         ...state,
         posts: null,
+        loading: false,
+        error: action.payload,
+      };
+      //COMMENTS
+    case FETCH_COMMENTS_STARTED:
+      return {
+        ...state,
+        comments: {
+          loading: true,
+          error: null,
+          data: [],
+        },
+      };
+    case FETCH_COMMENTS_SUCCESS:
+      return {
+        ...state,
+        comments: {
+          loading: false,
+          error: null,
+          data: [...action.payload.data],
+        },
+      };
+    case FETCH_COMMENTS_FAILURE:
+      return {
+        ...state,
+        comments: {
+          loading: false,
+          error: action.payload.error,
+          data: [],
+        },
+      };
+    case CREATE_COMMENT_SUCCESS:
+      return {
+        ...state,
+        comments: {
+          ...state.comments,
+          loading: false,
+          error: null,
+          data: [...state.comments.data, action.payload],
+        },
+      };
+    case CREATE_COMMENT_FAILURE:
+      return {
+        ...state,
+        comments: null,
         loading: false,
         error: action.payload,
       };

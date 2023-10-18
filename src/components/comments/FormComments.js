@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useAppContext } from "../../context/AppProvider";
 import { showAlertModal } from "../utils/Alert";
 import './FormComments.css';
+import ConfirmationModal from '../../ConfirmationModal/ConfirmationModal'
+import {createCommentAction} from '../../context/Actions'
 
 function FormComments() {
     const { dispatch } = useAppContext();
@@ -18,11 +20,18 @@ function FormComments() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        const newCommentWithId = {
+            ...newComment,
+        };
+
+        console.log("data:", newComment)
+
         setShowConfirmationModal(true);
+        setNewComment(newCommentWithId);
     };
 
     const handleConfirm = () => {
-        dispatch({ type: 'addComment', payload: newComment });
+        createCommentAction(dispatch, newComment)
 
         setShowForm(false);
         setShowConfirmationModal(false);
