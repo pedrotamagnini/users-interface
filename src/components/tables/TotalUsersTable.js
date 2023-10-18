@@ -1,6 +1,5 @@
 import React from 'react';
 import './TotalUsersTable.css';
-import userImage from '../../assets/images/add-user.png';
 
 function TotalUsersTable({ totalUsers }) {
     return (

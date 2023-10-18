@@ -22,11 +22,9 @@ function FormComments() {
     };
 
     const handleConfirm = () => {
-        // Aqui, você precisa chamar `dispatch` com uma ação para atualizar seu estado.
-        // Supondo que você tenha uma ação chamada 'addComment', você faria algo assim:
         dispatch({ type: 'addComment', payload: newComment });
 
-        setShowForm(false); // Feche o formulário
+        setShowForm(false);
         setShowConfirmationModal(false);
         showAlertModal("Success!", "Form submitted successfully!");
     };

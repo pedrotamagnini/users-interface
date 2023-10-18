@@ -6,7 +6,6 @@ function UserStatsPopup({ user, onClose }) {
             <h2>User Statistics</h2>
             <p>ID: {user.id}</p>
             <p>USER ID: {user.user_id}</p>
-            {/* Add code to fetch and display the number of posts and comments made by the user */}
             <button onClick={onClose}>Close</button>
         </div>
     );

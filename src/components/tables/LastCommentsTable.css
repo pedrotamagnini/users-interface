@@ -1,47 +1,46 @@
-/* Estilo da tabela de últimos comentários */
 .last-comments-table {
-    background-color: #f2f2f2; /* Cor de fundo igual à da navbar */
+    background-color: #f2f2f2;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    border-radius: 10px; /* Cantos arredondados */
+    border-radius: 10px;
     padding: 20px;
-    max-width: 600px; /* Defina um valor máximo de largura */
-    margin: -272px 50px 0 auto; /* Margens superior, direita, inferior e esquerda */
-    text-align: center; /* Centralize o texto horizontalmente */
+    max-width: 600px;
+    margin: -272px 50px 0 auto;
+    text-align: center;
 }
 
 .last-comments-table h2 {
-    color: #333; /* Cor do texto igual à da navbar */
-    text-align: center; /* Centralize o texto horizontalmente */
-    max-width: 100%; /* Remova a limitação de largura */
+    color: #333;
+    text-align: center;
+    max-width: 100%;
 }
 
 .last-comments-table table {
     width: 100%;
-    margin: 0 auto; /* Centralizar horizontalmente */
+    margin: 0 auto;
     border-collapse: collapse;
 }
 
 .last-comments-table th {
-    margin: 50px 50px 50px 50px; /* Margens superior, direita, inferior e esquerda */
+    margin: 50px 50px 50px 50px;
     text-align: center;
-    background-color: #1a73e8; /* Cor de fundo das células do cabeçalho */
+    background-color: #1a73e8;
 }
 
 .last-posts-table td {
-    margin: 50px 50px 50px 50px; /* Margens superior, direita, inferior e esquerda */
+    margin: 50px 50px 50px 50px;
     text-align: left;
 }
 
 .last-comments-table th:first-child, .last-comments-table td:first-child {
-    border-top-left-radius: 10px; /* Cantos arredondados no canto superior esquerdo */
+    border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
 .last-comments-table th:last-child, .last-comments-table td:last-child {
-    border-top-right-radius: 10px; /* Cantos arredondados no canto superior direito */
+    border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
 .last-comments-table tr:nth-child(even) {
-    background-color: #fff; /* Cor de fundo das linhas pares */
+    background-color: #fff;
 }

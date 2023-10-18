@@ -7,7 +7,6 @@ const menus = [
     { key: 'about', label: 'About' },
 ];
 
-// Defina a ação para atualizar o estado
 const UPDATE_NAV = 'UPDATE_NAV';
 
 const initialState = {

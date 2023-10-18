@@ -22,8 +22,6 @@ function FormUser() {
     };
 
     const handleConfirm = () => {
-        // Here, you need to call `dispatch` with an action to update your state.
-        // Assuming you have an action like 'addUser', you would do something like this:
         dispatch({ type: 'addUser', payload: newUser });
 
         setShowForm(false); // Close the form

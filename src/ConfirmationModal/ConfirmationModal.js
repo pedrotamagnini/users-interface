@@ -12,12 +12,6 @@ export default function ConfirmationModal({formData, onConfirm}) {
         onConfirm();
         toggleModal();
     };
-    //
-    // if (modal) {
-    //     document.body.classList.add('active-modal')
-    // } else {
-    //     document.body.classList.remove('active-modal')
-    // }
 
     return (
         <>

@@ -1,10 +1,9 @@
-/* FooterGlobal.css */
 .footer-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%; /* Ajusta a altura para ocupar toda a barra de rodapé */
+    height: 100%;
 }
 
 
@@ -12,12 +11,12 @@
     text-align: center;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    position: fixed; /* Fixar a barra no rodapé */
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: 1;
-    width: 100%; /* Preenche toda a largura */
+    width: 100%;
     background-color: none;
     display: flex;
     align-items: center;
@@ -54,12 +53,12 @@
 }
 
 .social-icons a {
-    color: #fff; /* Cor desejada para os ícones */
-    font-size: 24px; /* Tamanho desejado para os ícones */
+    color: #fff;
+    font-size: 24px;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #1a73e8; /* Cor diferente quando o ícone é passado o mouse por cima */
+    color: #1a73e8;
 }

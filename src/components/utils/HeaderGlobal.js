@@ -20,7 +20,7 @@ function HeaderGlobal() {
 
     const handleLoginSuccess = () => {
         setIsLoginSuccessful(true);
-        closeLoginPopup(); // Close the popup after successful login
+        closeLoginPopup();
     };
 
     return (
@@ -57,10 +57,9 @@ function Login({ onLoginSuccess }) {
     const [password, setPassword] = useState('');
 
     const handleLogin = () => {
-        // Simulated authentication logic
         if (username === 'User' && password === '123456') {
             alert('Login successful!');
-            onLoginSuccess(); // Call the login success function
+            onLoginSuccess();
         } else {
             alert('Invalid credentials. Please try again.');
         }
