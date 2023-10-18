@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { useAppContext } from "../../context/AppProvider";
 import { showAlertModal } from "../utils/Alert";
 import './FormPosts.css'
+import ConfirmationModal from '../../ConfirmationModal/ConfirmationModal'
+import {createPostAction} from '../../context/Actions'
+
 
 function FormPosts() {
     const { dispatch } = useAppContext();
@@ -17,11 +20,18 @@ function FormPosts() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        const newPostWithId = {
+            ...newPost,
+        };
+
+        console.log("data:", newPost)
+
         setShowConfirmationModal(true);
+        setNewPost(newPostWithId);
     };
 
     const handleConfirm = () => {
-        dispatch({ type: 'addPost', payload: newPost });
+        createPostAction(dispatch, newPost)
 
         setShowForm(false);
         setShowConfirmationModal(false);
