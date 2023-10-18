@@ -10,7 +10,7 @@ function TotalCommentsTable({ totalComments }) {
                 </thead>
                 <tbody>
                 <tr>
-                    <td>151</td>
+                    <td>10</td>
                 </tr>
                 </tbody>
             </table>

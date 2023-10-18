@@ -6,74 +6,74 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 function UsersTable() {
     const [usersData, setUsersData] = useState([
         {
-            "id": 29759,
-            "user_id": 5351072,
-            "title": "Verbera beneficium speculum bene dolorum thesis voluptatem consectetur.",
-            "due_on": "2023-10-25T00:00:00.000+05:30",
-            "status": "completed"
+            "id": 5372431,
+            "name": "Naval Bhattathiri CPA",
+            "email": "bhattathiri_cpa_naval@gleichner.test",
+            "gender": "male",
+            "status": "inactive"
         },
         {
-            "id": 29750,
-            "user_id": 5351056,
-            "title": "Deripio ciminatio absorbeo capto nihil vulariter.",
-            "due_on": "2023-10-25T00:00:00.000+05:30",
-            "status": "pending"
+            "id": 5372430,
+            "name": "Adheesh Singh",
+            "email": "singh_adheesh@hintz-hoppe.example",
+            "gender": "male",
+            "status": "inactive"
         },
         {
-            "id": 29748,
-            "user_id": 5351054,
-            "title": "Aequus expedita nobis aggredior magnam certe somniculosus unus.",
-            "due_on": "2023-10-19T00:00:00.000+05:30",
-            "status": "pending"
+            "id": 5372429,
+            "name": "Chandranath Nehru II",
+            "email": "chandranath_nehru_ii@ritchie.example",
+            "gender": "male",
+            "status": "inactive"
         },
         {
-            "id": 29741,
-            "user_id": 5351033,
-            "title": "Abbas antiquus adnuo aut statim maxime.",
-            "due_on": "2023-10-29T00:00:00.000+05:30",
-            "status": "completed"
+            "id": 5372428,
+            "name": "Prema Verma",
+            "email": "verma_prema@franecki-trantow.example",
+            "gender": "female",
+            "status": "inactive"
         },
         {
-            "id": 29739,
-            "user_id": 5351031,
-            "title": "Delicate curriculum crustulum terreo dolorem compello abeo sui.",
-            "due_on": "2023-11-05T00:00:00.000+05:30",
-            "status": "pending"
+            "id": 5372427,
+            "name": "Adripathi Varma",
+            "email": "adripathi_varma@farrell.test",
+            "gender": "male",
+            "status": "inactive"
         },
         {
-            "id": 29730,
-            "user_id": 5351012,
-            "title": "Sed optio vesco tutis timor pecunia brevis.",
-            "due_on": "2023-10-14T00:00:00.000+05:30",
-            "status": "pending"
+            "id": 5372425,
+            "name": "Nalini Prajapat",
+            "email": "nalini_prajapat@pollich.example",
+            "gender": "male",
+            "status": "inactive"
         },
         {
-            "id": 29727,
-            "user_id": 5351008,
-            "title": "Tertius et appono sulum adeo impedit.",
-            "due_on": "2023-10-27T00:00:00.000+05:30",
-            "status": "completed"
+            "id": 5372424,
+            "name": "Siddhi Tagore",
+            "email": "tagore_siddhi@schmitt.test",
+            "gender": "male",
+            "status": "active"
         },
         {
-            "id": 29724,
-            "user_id": 5351005,
-            "title": "Virga teres uredo solium speciosus sursum desipio quo adsuesco.",
-            "due_on": "2023-11-10T00:00:00.000+05:30",
-            "status": "completed"
+            "id": 5372423,
+            "name": "Amb. Rajinder Sethi",
+            "email": "rajinder_sethi_amb@little.example",
+            "gender": "female",
+            "status": "active"
         },
         {
-            "id": 29712,
-            "user_id": 5350982,
-            "title": "Patruus quaerat et eum via.",
-            "due_on": "2023-11-02T00:00:00.000+05:30",
-            "status": "completed"
+            "id": 5372422,
+            "name": "Rati Kapoor",
+            "email": "kapoor_rati@gutmann.test",
+            "gender": "male",
+            "status": "active"
         },
         {
-            "id": 29709,
-            "user_id": 5350978,
-            "title": "Et curso abundans caute stipes magnam suffoco.",
-            "due_on": "2023-11-03T00:00:00.000+05:30",
-            "status": "pending"
+            "id": 5372421,
+            "name": "Abhirath Mishra LLD",
+            "email": "lld_abhirath_mishra@skiles.test",
+            "gender": "male",
+            "status": "inactive"
         },
     ]);
 
@@ -116,17 +116,17 @@ function UsersTable() {
 
             <select value={selectedStatus} onChange={handleStatusFilter}>
                 <option value='all'>All</option>
-                <option value='completed'>Completed</option>
-                <option value='pending'>Pending</option>
+                <option value='active'>Active</option>
+                <option value='inactive'>Inactive</option>
             </select>
             <div className='table-container'>
                 <table>
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>USER ID</th>
-                        <th>TITLE</th>
-                        <th>DUE_ON</th>
+                        <th>NAME</th>
+                        <th>EMAIL</th>
+                        <th>GENDER</th>
                         <th>STATUS</th>
                         <th>ACTIONS</th>
                     </tr>
@@ -135,9 +135,9 @@ function UsersTable() {
                     {filteredUsers.map((user, index) => (
                         <tr key={index} onClick={() => setSelectedUser(user)}>
                             <td>{user.id}</td>
-                            <td>{user.user_id}</td>
-                            <td>{user.title}</td>
-                            <td>{user.due_on}</td>
+                            <td>{user.name}</td>
+                            <td>{user.email}</td>
+                            <td>{user.gender}</td>
                             <td className={`status ${user.status}`}>{user.status}</td>
                             <td>
                                 {selectedUser === user && (

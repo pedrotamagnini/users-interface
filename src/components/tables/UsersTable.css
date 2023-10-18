@@ -74,13 +74,15 @@ thead tr {
 }
 
 /* Estilo para status "completed" (verde) */
-td.status.completed {
+td.status.active {
     color: green;
+    font-weight: bold;
 }
 
 /* Estilo para status "pending" (laranja) */
-td.status.pending {
+td.status.inactive {
     color: orange;
+    font-weight: bold;
 }
 
 /* Estilo para a barra de filtro */

@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import './LastPostsTable.css'; // Importe o arquivo CSS
+import './LastPostsTable.css';
 
 function LastPostsTable() {
     const lastPosts = [
         {
-            "user_id": 5354499,
-            "title": "Et comminor cupressus earum cometes.",
+            "user_id": 5372429,
+            "title": "Tunc textor vero ut ut quibusdam.",
         },
         {
-            "user_id": 5354496,
-            "title": "Degero acidus validus ambulo amor correptius autem adinventitias delego.",
+            "user_id": 5372427,
+            "title": "Commemoro qui stultus pel sit repudiandae.",
         },
         {
-            "user_id": 5354496,
-            "title": "Thorax quisquam summisse condico tersus triumphus civis viduata utpote.",
+            "user_id": 5372427,
+            "title": "Peccatus subito volup copia nobis ocer umquam perferendis.",
         },
     ];
 

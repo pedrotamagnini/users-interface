@@ -3,29 +3,14 @@ import { useAppContext } from "../../context/AppProvider";
 import { showAlertModal } from "../utils/Alert";
 import './FormUsers.css';
 
-const getFormattedCurrentDateTime = () => {
-    const currentDateTime = new Date();
-    const year = currentDateTime.getFullYear();
-    const month = String(currentDateTime.getMonth() + 1).padStart(2, '0');
-    const day = String(currentDateTime.getDate()).padStart(2, '0');
-    const hours = String(currentDateTime.getUTCHours()).padStart(2, '0');
-    const minutes = String(currentDateTime.getUTCMinutes()).padStart(2, '0');
-    const seconds = String(currentDateTime.getUTCSeconds()).padStart(2, '0');
-    const milliseconds = String(currentDateTime.getUTCMilliseconds()).padStart(3, '0');
-    const timezoneOffsetHours = String(Math.floor(currentDateTime.getTimezoneOffset() / 60)).padStart(2, '0');
-    const timezoneOffsetMinutes = String(Math.abs(currentDateTime.getTimezoneOffset() % 60)).padStart(2, '0');
-    const formattedDateTime = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}.${milliseconds}+${timezoneOffsetHours}:${timezoneOffsetMinutes}`;
-    return formattedDateTime;
-};
-
 function FormUser() {
     const { dispatch } = useAppContext();
     const [newUser, setNewUser] = useState({
         id: "",
-        userId: "",
-        title: "",
-        due_on: getFormattedCurrentDateTime(),
-        status: "pending",
+        name: "",
+        email: "",
+        gender: "",
+        status: "inactive",
     });
     const [showPopup, setShowPopup] = useState(false);
     const [showForm, setShowForm] = useState(false);
@@ -100,45 +85,49 @@ function FormUser() {
                             </p>
                             <p>
                                 <label className="boxTitle">
-                                    USER ID
+                                    NAME
                                     <input
                                         className="inputBox"
-                                        placeholder="Enter USER ID"
+                                        placeholder="Enter NAME"
                                         type="text"
-                                        name="userId"
+                                        name="name"
                                         required
-                                        value={newUser.userId}
+                                        value={newUser.name}
                                         onChange={handleChangeInput}
                                     />
                                 </label>
                             </p>
                             <p>
                                 <label className="boxTitle">
-                                    TITLE
+                                    EMAIL
                                     <input
                                         className="inputBox"
-                                        placeholder="Enter TITLE"
+                                        placeholder="Enter EMAIL"
                                         type="text"
-                                        name="title"
+                                        name="email"
                                         required
-                                        value={newUser.title}
+                                        value={newUser.email}
                                         onChange={handleChangeInput}
                                     />
                                 </label>
                             </p>
                             <p>
                                 <label className="boxTitle">
-                                    DUE_ON
-                                    <input
+                                    GENDER
+                                    <select
                                         className="inputBox"
-                                        placeholder="Enter DUE_ON"
-                                        type="text"
-                                        name="due_on"
+                                        name="gender"
                                         required
-                                        value={newUser.due_on}
+                                        value={newUser.gender}
                                         onChange={handleChangeInput}
-                                    />
+                                    >
+                                        <option value="">Select Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
                                 </label>
+
                             </p>
                             <p>
                                 <label className="boxTitle">
@@ -149,11 +138,11 @@ function FormUser() {
                                         <input
                                             type="radio"
                                             name="status"
-                                            value="pending"
-                                            checked={newUser.status === "pending"}
+                                            value="inactive"
+                                            checked={newUser.status === "inactive"}
                                             onChange={handleChangeInput}
                                         />
-                                        Pending
+                                        Inactive
                                     </label>
                                 </div>
                             </p>
@@ -171,9 +160,9 @@ function FormUser() {
                         <p className="confirmMessage">Are you sure you want to submit this form?</p>
                         <div className="form-data">
                             <p>ID: {newUser.id}</p>
-                            <p>USER ID: {newUser.userId}</p>
-                            <p>TITLE: {newUser.title}</p>
-                            <p>DUE_ON: {newUser.due_on}</p>
+                            <p>NAME: {newUser.name}</p>
+                            <p>EMAIL: {newUser.email}</p>
+                            <p>GENDER: {newUser.gender}</p>
                             <p>STATUS: {newUser.status}</p>
                         </div>
                         <p></p>

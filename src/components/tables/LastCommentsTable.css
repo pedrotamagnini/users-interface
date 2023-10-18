@@ -21,13 +21,15 @@
     border-collapse: collapse;
 }
 
-.last-comments-table th, .last-comments-table td {
-    margin: 10px; /* Espaçamento interno das células */
+.last-comments-table th {
+    margin: 50px 50px 50px 50px; /* Margens superior, direita, inferior e esquerda */
     text-align: center;
+    background-color: #1a73e8; /* Cor de fundo das células do cabeçalho */
 }
 
-.last-comments-table th {
-    background-color: #1a73e8; /* Cor de fundo das células do cabeçalho */
+.last-posts-table td {
+    margin: 50px 50px 50px 50px; /* Margens superior, direita, inferior e esquerda */
+    text-align: left;
 }
 
 .last-comments-table th:first-child, .last-comments-table td:first-child {

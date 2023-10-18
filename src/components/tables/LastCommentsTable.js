@@ -1,12 +1,11 @@
-import './LastCommentsTable.css'; // Importe o arquivo CSS
+import './LastCommentsTable.css';
+import React from "react";
 
 function LastCommentsTable() {
-    // Suponha que você tenha uma lista de últimos comentários
     const lastComments = [
-        { user: 'Usuário 1', comment: 'Comentário 1' },
-        { user: 'Usuário 2', comment: 'Comentário 2' },
-        { user: 'Usuário 3', comment: 'Comentário 3' },
-        // Adicione mais comentários, se necessário
+        { id: 62864, body: "Maiores est dolores. Nobis natus adipisci. Culpa sapiente dolores. Molestiae quibusdam ut." },
+        { id: 62865, body: "Est vel tempore. Et ullam mollitia. Nihil quis est." },
+        { id: 62866, body: "Asperiores porro nam. Nihil iste necessitatibus." },
     ];
 
     return (
@@ -15,17 +14,17 @@ function LastCommentsTable() {
             <table>
                 <thead>
                 <tr>
-                    <th>Usuário</th>
-                    <th>Comentário</th>
-                    {/* Outras colunas, se necessário */}
+                    <th>ID</th>
+                    <th>COMMENT</th>
                 </tr>
                 </thead>
                 <tbody>
                 {lastComments.map((comment, index) => (
                     <tr key={index}>
-                        <td>{comment.user}</td>
-                        <td>{comment.comment}</td>
-                        {/* Outras colunas, se necessário */}
+                        <td>{comment.id}</td>
+                        <td className="post-body">
+                            {comment.body.length > 30 ? `${comment.body.substring(0, 60)}...` : comment.body}
+                        </td>
                     </tr>
                 ))}
                 </tbody>
