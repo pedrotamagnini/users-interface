@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css';
 import PostsTable from '../components/tables/PostsTable';
 import Nav from '../components/utils/Nav';
-import FormUser from "../components/users/FormUsers";
+import FormPosts from "../components/posts/FormPosts";
 
 function PostsPage() {
     return (
@@ -13,6 +13,7 @@ function PostsPage() {
             </div>
             <div className="tables-container">
                 <PostsTable />
+                <FormPosts />
             </div>
         </div>
     );
