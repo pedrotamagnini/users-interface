@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { useAppContext } from "../../context/AppProvider";
+import { useAppContext }from "../../context/AppProvider";
 import { showAlertModal } from "../utils/Alert";
 import './FormUsers.css';
+import ConfirmationModal from '../../ConfirmationModal/ConfirmationModal'
+import {createUserAction} from '../../context/Actions'
 
 function FormUser() {
     const { dispatch } = useAppContext();
@@ -13,18 +15,25 @@ function FormUser() {
         status: "inactive",
     });
     const [showPopup, setShowPopup] = useState(false);
-    const [setShowForm] = useState(false);
+    const [showForm, setShowForm] = useState(false);
     const [showConfirmationModal, setShowConfirmationModal] = useState(false);
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        const newUserWithId = {
+            ...newUser,
+        };
+        
+        console.log("data:", newUser)
+
         setShowConfirmationModal(true);
+        setNewUser(newUserWithId);
     };
 
     const handleConfirm = () => {
-        dispatch({ type: 'addUser', payload: newUser });
+        createUserAction(dispatch, newUser)
 
-        setShowForm(false); // Close the form
+        setShowForm(false);
         setShowConfirmationModal(false);
         showAlertModal("Success!", "Form submitted successfully!");
     };

@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import "./ConfirmationModal.css";
 
 export default function ConfirmationModal({formData, onConfirm}) {
     const [modal, setModal] = useState(false);

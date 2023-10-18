@@ -1,3 +1,4 @@
+/* Estilos para o componente HeaderGlobal */
 .header-global {
     color: white;
     display: flex;
@@ -15,6 +16,7 @@
     cursor: pointer;
 }
 
+/* Estilos para o formulário de login */
 .login-popup {
     position: fixed;
     top: 0;
@@ -86,5 +88,5 @@
 }
 
 .logout-button:hover {
-    background-color: #e34a4a;
+    background-color: #e34a4a; /* Cor de destaque quando o botão é hover */
 }

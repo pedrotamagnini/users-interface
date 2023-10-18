@@ -4,6 +4,7 @@ import {reducer} from "./Reducer";
 const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
+    const initialState = { /* seu estado inicial aqui */ };
     const [state, dispatch] = useReducer(reducer, initialState);
 
     return (
