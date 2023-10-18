@@ -15,18 +15,6 @@ function FormPosts() {
     const [showForm, setShowForm] = useState(false);
     const [showConfirmationModal, setShowConfirmationModal] = useState(false);
 
-    const sendPostData = (postData) => {
-        return new Promise((resolve, reject) => {
-            // Simulação de envio de dados para a API
-            setTimeout(() => {
-                // Simulando uma resposta bem-sucedida
-                resolve({ status: 'success', data: postData });
-                // Ou simular um erro
-                // reject(new Error('Erro na chamada à API'));
-            }, 1000); // Simulação de uma chamada assíncrona
-        });
-    };
-
     const handleSubmit = (event) => {
         event.preventDefault();
         setShowConfirmationModal(true);

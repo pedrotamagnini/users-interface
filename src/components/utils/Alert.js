@@ -1,5 +1,3 @@
-import React from "react";
-
 export function showAlertModal(headingText, messageText) {
     const modal = document.createElement("div");
     modal.className = "alert-modal";
