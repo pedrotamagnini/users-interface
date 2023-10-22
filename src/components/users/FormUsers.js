@@ -73,8 +73,10 @@ function FormUser() {
                                         type="text"
                                         name="id"
                                         required
+                                        title="ℹ Maximum of 7 digits"
                                         value={newUser.id}
                                         onChange={handleChangeInput}
+                                        maxLength={7}
                                     />
                                 </label>
                             </p>
@@ -89,6 +91,9 @@ function FormUser() {
                                         required
                                         value={newUser.name}
                                         onChange={handleChangeInput}
+                                        maxLength={25}
+                                        pattern="[A-Za-z\s]+"
+                                        title="ℹ Only letters and spaces are allowed"
                                     />
                                 </label>
                             </p>
@@ -103,6 +108,8 @@ function FormUser() {
                                         required
                                         value={newUser.email}
                                         onChange={handleChangeInput}
+                                        pattern=".*@.*"
+                                        title="ℹ Please enter a valid email address with @"
                                     />
                                 </label>
                             </p>

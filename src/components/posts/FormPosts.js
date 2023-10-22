@@ -8,8 +8,8 @@ import {createPostAction} from '../../context/Actions'
 function FormPosts() {
     const { dispatch } = useAppContext();
     const [newPost, setNewPost] = useState({
-        id: "",
-        user_id: "",
+        id: 0,
+        user_id: 0,
         title: "",
         body: "",
     });

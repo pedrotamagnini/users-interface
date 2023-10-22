@@ -1,81 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CommentsTable.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 
 function Comments() {
-    const [commentsData, setCommentsData] = useState([
-        {
-            "id": 62879,
-            "post_id": 77241,
-            "name": "Avantika Johar CPA",
-            "email": "cpa_avantika_johar@sporer.test",
-            "body": "Voluptas aut aut. Voluptatem rerum quidem. Labore non qui. Non in illum."
-        },
-        {
-            "id": 62878,
-            "post_id": 77241,
-            "name": "Tara Talwar",
-            "email": "tara_talwar@dietrich-kuhlman.example",
-            "body": "Atque omnis deserunt."
-        },
-        {
-            "id": 62873,
-            "post_id": 77233,
-            "name": "Daevi Khanna DC",
-            "email": "daevi_dc_khanna@mueller.test",
-            "body": "Quaerat officiis officia. Aut sed et. Dolor dolores nostrum."
-        },
-        {
-            "id": 62872,
-            "post_id": 77232,
-            "name": "Subhash Panicker PhD",
-            "email": "panicker_phd_subhash@gorczany-hermann.test",
-            "body": "Sequi quia dolores. Est deserunt nihil."
-        },
-        {
-            "id": 62869,
-            "post_id": 77230,
-            "name": "Aaratrika Achari",
-            "email": "aaratrika_achari@emmerich.example",
-            "body": "Dolorum odio blanditiis. Quidem vitae animi. Omnis et velit. Blanditiis consequatur eum."
-        },
-        {
-            "id": 62868,
-            "post_id": 77230,
-            "name": "Akshaj Mukhopadhyay",
-            "email": "akshaj_mukhopadhyay@oreilly.test",
-            "body": "Quo quasi rerum. Facilis tempora enim."
-        },
-        {
-            "id": 62867,
-            "post_id": 77228,
-            "name": "Vishwamitra Devar",
-            "email": "vishwamitra_devar@osinski.test",
-            "body": "Aliquid cumque quo. Quo praesentium labore. Labore autem quia."
-        },
-        {
-            "id": 62866,
-            "post_id": 77227,
-            "name": "Dhanu Naik",
-            "email": "dhanu_naik@leannon.test",
-            "body": "Maiores est dolores. Nobis natus adipisci. Culpa sapiente dolores. Molestiae quibusdam ut."
-        },
-        {
-            "id": 62865,
-            "post_id": 77227,
-            "name": "The Hon. Mangala Bhattacharya",
-            "email": "mangala_hon_bhattacharya_the@konopelski.example",
-            "body": "Est vel tempore. Et ullam mollitia. Nihil quis est."
-        },
-        {
-            "id": 62864,
-            "post_id": 77226,
-            "name": "Bhargava Nambeesan Jr.",
-            "email": "bhargava_jr_nambeesan@hilpert.test",
-            "body": "Asperiores porro nam. Nihil iste necessitatibus."
+    const [commentsData, setCommentsData] = useState([]);
+    
+    // Função para buscar os dados do Postman
+    const fetchPostmanData = async () => {
+        try {
+            // Realize a solicitação GET para a URL do Postman
+            const response = await axios.get('https://gorest.co.in/public/v2/comments');
+
+            // Os dados da resposta estarão em response.data
+            const commentsData = response.data;
+
+            // Atualize o estado dos dados do Postman
+            setCommentsData(commentsData);
+        } catch (error) {
+            // Lidar com erros, por exemplo, exibindo uma mensagem de erro
+            console.error('Erro ao buscar dados do Postman:', error);
         }
-    ]);
+    };
+
+// Chame a função para buscar dados quando o componente for montado
+    useEffect(() => {
+        fetchPostmanData();
+    }, []);
 
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedComment, setSelectedComment] = useState(null);

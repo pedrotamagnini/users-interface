@@ -1,81 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './UsersTable.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 
 function UsersTable() {
-    const [usersData, setUsersData] = useState([
-        {
-            "id": 5372431,
-            "name": "Naval Bhattathiri CPA",
-            "email": "bhattathiri_cpa_naval@gleichner.test",
-            "gender": "male",
-            "status": "inactive"
-        },
-        {
-            "id": 5372430,
-            "name": "Adheesh Singh",
-            "email": "singh_adheesh@hintz-hoppe.example",
-            "gender": "male",
-            "status": "inactive"
-        },
-        {
-            "id": 5372429,
-            "name": "Chandranath Nehru II",
-            "email": "chandranath_nehru_ii@ritchie.example",
-            "gender": "male",
-            "status": "inactive"
-        },
-        {
-            "id": 5372428,
-            "name": "Prema Verma",
-            "email": "verma_prema@franecki-trantow.example",
-            "gender": "female",
-            "status": "inactive"
-        },
-        {
-            "id": 5372427,
-            "name": "Adripathi Varma",
-            "email": "adripathi_varma@farrell.test",
-            "gender": "male",
-            "status": "inactive"
-        },
-        {
-            "id": 5372425,
-            "name": "Nalini Prajapat",
-            "email": "nalini_prajapat@pollich.example",
-            "gender": "male",
-            "status": "inactive"
-        },
-        {
-            "id": 5372424,
-            "name": "Siddhi Tagore",
-            "email": "tagore_siddhi@schmitt.test",
-            "gender": "male",
-            "status": "active"
-        },
-        {
-            "id": 5372423,
-            "name": "Amb. Rajinder Sethi",
-            "email": "rajinder_sethi_amb@little.example",
-            "gender": "female",
-            "status": "active"
-        },
-        {
-            "id": 5372422,
-            "name": "Rati Kapoor",
-            "email": "kapoor_rati@gutmann.test",
-            "gender": "male",
-            "status": "active"
-        },
-        {
-            "id": 5372421,
-            "name": "Abhirath Mishra LLD",
-            "email": "lld_abhirath_mishra@skiles.test",
-            "gender": "male",
-            "status": "inactive"
-        },
-    ]);
+    const [usersData, setUsersData] = useState([]);
+        
+    // Função para buscar os dados do Postman
+    const fetchPostmanData = async () => {
+        try {
+            // Realize a solicitação GET para a URL do Postman
+            const response = await axios.get('https://gorest.co.in/public/v2/users');
+
+            // Os dados da resposta estarão em response.data
+            const usersData = response.data;
+
+            // Atualize o estado dos dados do Postman
+            setUsersData(usersData);
+        } catch (error) {
+            // Lidar com erros, por exemplo, exibindo uma mensagem de erro
+            console.error('Erro ao buscar dados do Postman:', error);
+        }
+    };
+
+// Chame a função para buscar dados quando o componente for montado
+    useEffect(() => {
+        fetchPostmanData();
+    }, []);
 
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedStatus, setSelectedStatus] = useState('all');
